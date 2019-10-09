@@ -69,5 +69,9 @@ public class HsqlDBTest {
 		ds.setUser("sa");
 		ds.setPassword("sa");
 		return ds;
-	}	
+	}
+        @Test (expected =Exception.class)
+        public void addWrongPrice() throws SQLException{
+            myObject.addProduct(10,"Aled", -10);
+        }
 }
